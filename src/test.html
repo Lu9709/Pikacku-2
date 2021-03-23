@@ -6,6 +6,7 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>测试</title>
+  <link rel="stylesheet" href="position.css">
 </head>
 <body>
 <div id="demo1"></div>
@@ -41,66 +42,6 @@
     </div>
   </div>
 </div>
-<style>
-    * {
-        box-sizing: border-box;
-    }
-
-    *::before, *::after {
-        box-sizing: border-box
-    }
-
-    #buttons {
-        position: fixed;
-        right: 0;
-        top: 0;
-        display: flex;
-        z-index: 10;
-        flex-direction: column;
-        margin-top: 10px;
-        margin-right: 10px;
-    }
-
-    #buttons > button {
-        margin-bottom: 10px;
-        padding: 4px 8px;
-    }
-
-    #demo1 {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 50vh;
-        width: 100%;
-        overflow-y: auto;
-
-    }
-
-    #demo1::-webkit-scrollbar {
-        display: none;
-    }
-
-    /* 滚动条消失了 但是可以用滚轮滚动*/
-    #demo2 {
-        display: none;
-    }
-
-    #html {
-        position: fixed;
-        height: 50vh;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-    }
-    @media(max-width:500px){
-        #html{
-            height: 50vh;
-        }
-        #demo1{
-            height: 50vh;
-        }
-    }
-</style>
 <script src="test.js"></script>
 </body>
 </html>
