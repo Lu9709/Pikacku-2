@@ -6,16 +6,8 @@ const player = {
     time: 100,
     n: 1,
     ui: {
-        demo: document.querySelector('#demo'),
+        demo1: document.querySelector('#demo1'),
         demo2: document.querySelector('#demo2')
-    },
-    //初始化内容
-    init: () => {
-        player.ui.demo.innerText = string.substr(0, player.n)
-        player.ui.demo2.innerHTML = string.substr(0, player.n)
-        player.bindEvents()
-        player.play()
-
     },
     events: {
         '#btnPause':'pause',
@@ -23,6 +15,13 @@ const player = {
         '#btnNormal':'Normal',
         '#btnSlow':'Slow',
         '#btnQuick':'Quick'
+    },
+    //初始化内容
+    init: () => {
+        player.ui.demo1.innerText = string.substr(0, player.n)
+        player.ui.demo2.innerHTML = string.substr(0, player.n)
+        player.play()
+        player.bindEvents()
     },
     bindEvents:()=>{
         for(let key in player.events){
@@ -40,10 +39,9 @@ const player = {
             //   取消计时器
             return
         }
-        console.log(player.n + ':' + string.substr(0, player.n))
-        player.ui.demo.innerText = string.substr(0, player.n)
+        player.ui.demo1.innerText = string.substr(0, player.n)
         player.ui.demo2.innerHTML = string.substr(0, player.n)
-        player.ui.demo.scrollTop = player.ui.demo.scrollHeight
+        player.ui.demo1.scrollTop = player.ui.demo1.scrollHeight
 //    将滚动条拉到底 有问题scrollHeight要减去滚动条的高度
     },
     play: () => {

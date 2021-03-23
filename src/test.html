@@ -1,29 +1,37 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>测试</title>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>测试</title>
 </head>
 <body>
+<div id="demo1"></div>
 <style id="demo2"></style>
-<div id="demo"></div>
 <div id="buttons">
-    <button id="btnPause">暂停</button>
-    <button id="btnPlay">播放</button>
-    <button id="btnSlow">慢速</button>
-    <button id="btnNormal">中速</button>
-    <button id="btnQuick">快速</button>
+  <button id="btnPause">暂停</button>
+  <button id="btnPlay">播放</button>
+  <button id="btnSlow">慢速</button>
+  <button id="btnNormal">中速</button>
+  <button id="btnQuick">快速</button>
 </div>
 <style>
+    * {
+        box-sizing: border-box;
+    }
+
+    *::before, *::after {
+        box-sizing: border-box
+    }
+
     #buttons {
         position: fixed;
-        z-index: 10;
         right: 0;
         top: 0;
         display: flex;
+        z-index: 10;
         flex-direction: column;
         margin-top: 10px;
         margin-right: 10px;
@@ -34,27 +42,24 @@
         padding: 4px 8px;
     }
 
-    #demo2 {
-        display: none;
-    }
-
-    #demo {
+    #demo1 {
         position: fixed;
         top: 0;
         left: 0;
         height: 50vh;
         width: 100%;
-        border: 1px solid red;
-        overflow: hidden;
         overflow-y: auto;
 
     }
 
-    #demo::-webkit-scrollbar {
+    #demo1::-webkit-scrollbar {
         display: none;
     }
 
     /* 滚动条消失了 但是可以用滚轮滚动*/
+    #demo2 {
+        display: none;
+    }
 
     #html {
         position: fixed;
@@ -62,32 +67,39 @@
         left: 0;
         bottom: 0;
         width: 100%;
-        height: 50vh;
+    }
+    @media(max-width:500px){
+        #html{
+            height: 50vh;
+        }
+        #demo1{
+            height: 50vh;
+        }
     }
 </style>
 <div id="html">
-    <div class="skin">
-        <div class="eye left"></div>
-        <div class="eye right"></div>
-        <div class="nose">
-            <div class="yuan"></div>
-        </div>
-        <div class="face left">
-        </div>
-        <div class="face right">
-        </div>
-        <div class="mouth">
-            <div class="up">
-                <div class="lip left"></div>
-                <div class="lip right"></div>
-            </div>
-            <div class="down">
-                <div class="yuan1">
-                    <div class="yuan2"></div>
-                </div>
-            </div>
-        </div>
+  <div class="skin">
+    <div class="eye left"></div>
+    <div class="eye right"></div>
+    <div class="nose">
+      <div class="yuan"></div>
     </div>
+    <div class="face left">
+    </div>
+    <div class="face right">
+    </div>
+    <div class="mouth">
+      <div class="up">
+        <div class="lip left"></div>
+        <div class="lip right"></div>
+      </div>
+      <div class="down">
+        <div class="yuan1">
+          <div class="yuan2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <script src="test.js"></script>
 </body>
