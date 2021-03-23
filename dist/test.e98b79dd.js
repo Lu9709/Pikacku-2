@@ -161,7 +161,7 @@ var player = {
   bindEvents: function bindEvents() {
     for (var key in player.events) {
       if (player.events.hasOwnProperty(key)) {
-        // 看play.events的由原型中是否有key
+        // 看play.events的key是否为自身属性
         var value = player.events[key]; //遍历events事件内的值
 
         document.querySelector(key).onclick = player[value]; //直接调用player的方法
@@ -236,7 +236,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59583" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61951" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
